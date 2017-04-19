@@ -17,7 +17,7 @@ public class Endereco {
 
 	@NotNull
 	@Length(max = 50)
-	private String lodradouro;
+	private String logradouro;
 
 	@NotNull
 	@Length(max = 50)
@@ -45,12 +45,12 @@ public class Endereco {
 		this.id = id;
 	}
 
-	public String getLodradouro() {
-		return lodradouro;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setLodradouro(String lodradouro) {
-		this.lodradouro = lodradouro;
+	public void setLogradouro(String lodradouro) {
+		this.logradouro = lodradouro;
 	}
 
 	public String getCidade() {
