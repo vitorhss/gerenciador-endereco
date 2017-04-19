@@ -1,5 +1,7 @@
 package br.com.gerenciador.endereco.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,12 @@ public class EnderecoRest extends AbstractRest {
 	@RequestMapping(value = "/{cep}", method = RequestMethod.GET)
 	public ResponseEntity<Endereco> getEndereco( @PathVariable("cep") String cep){
 		return responseOk(enderecoService.getEndereco(cep));
+	}
+	
+	@ApiOperation("Listagem de Endereços")
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<List<Endereco>> listarEnderecos(){
+		return responseOk(enderecoService.listarEnderecos());
 	}
 
 }
