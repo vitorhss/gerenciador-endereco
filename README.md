@@ -1,13 +1,12 @@
 # Gerenciador de Endereços #
-Módulo responsável por fazer a gestão das malhas logísticas, dando suporte para a gestão das entregas
 
 # Instruções de Execução #
- - Download do jar do banco HSQLDB (Versão 2.3.4)
+ - Download do jar do banco HSQLDB
    https://sourceforge.net/projects/hsqldb/files/latest/download?source=files
    Descompactar o arquivo e acessar via terminal a pasta lib
 
  - Iniciar o server do HSQLDB
-   java -cp hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 delivery-management
+   java -cp hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 gerenciador-endereco
 
  - Acessar a pasta do projeto e executar:
    mvn -DskipTests package
