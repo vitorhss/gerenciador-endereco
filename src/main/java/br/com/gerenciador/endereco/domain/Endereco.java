@@ -8,11 +8,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name = "endereco")
 public class Endereco {
 	@Id
 	@GeneratedValue
 	@Column(updatable = false, insertable = true)
+	@JsonIgnore
 	private Integer id;
 
 	@NotNull
