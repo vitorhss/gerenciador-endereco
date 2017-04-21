@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import br.com.gerenciador.endereco.domain.FieldErro;
 import br.com.gerenciador.endereco.exception.BusinessException;
 import br.com.gerenciador.endereco.exception.ValidationException;
+import br.com.gerenciador.endereco.domain.Error;
 
 @ControllerAdvice
 public class ExceptionHandlingController {
