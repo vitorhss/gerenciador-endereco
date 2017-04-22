@@ -1,12 +1,11 @@
 # Gerenciador de Endereços #
+Serviço responsável pelo gerenciamento de endereços dos usuários
 
+# Funcionalidades #
+ - Consulta de CEP: Consulta de endereço por cep 
+ - Manutenção do endereco: Consulta, inclusão, manutenção e exclusão de endereço
+ 
 # Instruções de Execução #
- - Download do jar do banco HSQLDB
-   https://sourceforge.net/projects/hsqldb/files/latest/download?source=files
-   Descompactar o arquivo e acessar via terminal a pasta lib
-
- - Iniciar o server do HSQLDB
-   java -cp hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 gerenciador-endereco
 
  - Acessar a pasta do projeto e executar:
    mvn -DskipTests package
@@ -14,14 +13,20 @@
  - Após a geração do build com sucesso a aplição poderá ser iniciada
    Ex: mvn spring-boot:run
 
- Obs: Como o hsqldb é um banco em memória, os scripts iniciais serão executados no start da aplicação.
-
 # Swagger #
 Documentação das APIs
 localhost:8080/swagger-ui.html
 
 # Exemplos #
-
+GET /enderecos
+{
+    "logradouro": "Rua Boçoroca",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "04377190",
+    "complemento": "Rua 1",
+    "bairro": "Vila Mira"
+}
 
 # Bibliotecas Utilizadas #
  - Spring Boot: Projeto Spring, criado para facilitar o start inicial de um projeto, efetuando automaticamente algumas configurações
