@@ -49,7 +49,7 @@ public class EnderecoServiceImpl implements EnderecoService {
 		}
 
 		if (endereco.getCep() == null) {
-			throw new ResourceNotFoundException("Cep inválido");
+			throw new BusinessException("Cep inválido");
 		}
 		return endereco;
 	}
@@ -63,6 +63,9 @@ public class EnderecoServiceImpl implements EnderecoService {
 	public Message incluir(EnderecoJSON endereco) {
 		Endereco enderecoVerificado = get(endereco.getEndereco().getCep());
 		
+		if(enderecoRepository.findByCep(endereco.getEndereco().getCep()) != null){
+			throw new BusinessException("Este cep já está cadastrado na base de endereços");
+		}
 		enderecoRepository.save(endereco.getEndereco());
 		
 		return new Message("Endereço incluido com sucesso");
@@ -88,9 +91,9 @@ public class EnderecoServiceImpl implements EnderecoService {
 		return new Message("Endereço removido com sucesso");
 	}
 
-	private void validaEndereco(Integer idEndereco) {
+	protected void validaEndereco(Integer idEndereco) {
 		if (!enderecoRepository.exists(idEndereco)) {
-			throw new BusinessException("Não há um endereço correspondente ao ID informando");
+			throw new ResourceNotFoundException("Não há um endereço correspondente ao ID informando");
 		}
 	}
 
