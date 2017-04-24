@@ -17,7 +17,8 @@ https://gerenciador-endereco.herokuapp.com/enderecos
 
 # Swagger #
 Documentação das APIs
-localhost:8080/swagger-ui.html
+Local: localhost:8080/swagger-ui.html
+Produção: https://gerenciador-endereco.herokuapp.com/swagger-ui.html
 
 # Exemplos #
 GET /enderecos
